@@ -1,0 +1,109 @@
+name: 'CI/CD Pipeline: Build, Lint, Test, and Security'
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  # Job to install pnpm once, if needed for matrix or complex setups, though often done per job.
+  # For simplicity, installing pnpm directly in each job step requiring it is common and clear.
+
+  lint_and_build:
+    name: 'Lint & Build (Extension & API)'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
+
+      - name: 'Setup Node.js ${{ env.NODE_VERSION }}'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '${{ env.NODE_VERSION }}'
+
+      - name: 'Install pnpm'
+        run: npm install -g pnpm
+
+      - name: 'Install Dependencies with pnpm'
+        run: pnpm install --frozen-lockfile
+
+      - name: 'Run Biome Lint & Format Check'
+        run: pnpm lint
+
+      - name: 'Build Browser Extension'
+        run: pnpm build:extension # Assuming 'build:extension' script in package.json for WXT/React
+
+      - name: 'Build Node.js API'
+        run: pnpm build:api # Assuming 'build:api' script in package.json for Node.js backend
+
+  test:
+    name: 'Run Unit & E2E Tests'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
+
+      - name: 'Setup Node.js ${{ env.NODE_VERSION }}'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '${{ env.NODE_VERSION }}'
+
+      - name: 'Install pnpm'
+        run: npm install -g pnpm
+
+      - name: 'Install Dependencies with pnpm'
+        run: pnpm install --frozen-lockfile
+
+      - name: 'Run Vitest Unit Tests'
+        run: pnpm test:unit # Assuming 'test:unit' script in package.json for Vitest
+
+      - name: 'Install Playwright Browsers'
+        run: pnpm exec playwright install --with-deps
+
+      - name: 'Run Playwright E2E Tests'
+        run: pnpm test:e2e # Assuming 'test:e2e' script in package.json for Playwright
+
+      - name: 'Upload Playwright Test Results (if any)'
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+  security_scan:
+    name: 'Perform Security Scan (npm audit)'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
+
+      - name: 'Setup Node.js ${{ env.NODE_VERSION }}'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '${{ env.NODE_VERSION }}'
+
+      - name: 'Install pnpm'
+        run: npm install -g pnpm
+
+      - name: 'Install Dependencies with pnpm'
+        run: pnpm install --frozen-lockfile
+
+      - name: 'Run npm audit for critical vulnerabilities'
+        # Using npm audit which inspects node_modules for vulnerabilities.
+        # 'critical' level is used to fail on severe issues, adjust as needed.
+        run: pnpm audit --audit-level critical
