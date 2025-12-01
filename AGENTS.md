@@ -8,71 +8,73 @@
 
 ---
 
-
-## 2. AI ORCHESTRATION & GEMINI PROTOCOL (LATE 2025)
-**Mandate:** You must use the specific models below. Strictly follow this **Fallback Cascade**. Always try the smartest model first.
-* **Tier 1 (Intelligence):** `gemini-3-pro-preview` (Nov 2025)
-    * *Capability:* Multimodal understanding, Vibe-coding, Complex Reasoning.
-    * *Context:* 1M Input / 65k Output.
-* **Tier 2 (Reasoning/STEM):** `gemini-2.5-pro` (Stable)
-    * *Capability:* Advanced thinking, Codebases, Math.
-    * *Context:* 1M Input / 65k Output.
-* **Tier 3 (Balanced Speed):** `gemini-2.5-flash` (Stable)
-    * *Capability:* Large scale processing, Agentic use cases.
-    * *Context:* 1M Input / 65k Output.
-* **Tier 4 (Ultra-Fast/Cost):** `gemini-2.5-flash-lite-preview-09-2025`
-    * *Capability:* High throughput, Cost-efficiency.
-    * *Context:* 1M Input / 65k Output.
-* **Tier 5 (Legacy/Specialized):**
-    * `gemini-2.0-flash` (Workhorse fallback).
-    * `gemini-2.5-flash-native-audio-preview-09-2025` (Audio I/O).
-* **Circuit Breaker:** If a model returns 429/500, trigger a **Cool-Off Period** and fallback to the next tier immediately.
-* **Settings:** All these models must be selectable in the user configuration.
+## 2. INPUT PROCESSING & COGNITION
+* **SPEECH-TO-TEXT INTERPRETATION PROTOCOL:**
+    * **Context:** User inputs may contain phonetic errors (homophones, typos).
+    * **Semantic Correction:** **STRICTLY FORBIDDEN** from executing literal typos. You must **INFER** technical intent based on the project context.
+    * **Logic Anchor:** Treat the `README.md` as the **Single Source of Truth (SSOT)**.
+* **MANDATORY MCP INSTRUMENTATION:**
+    * **No Guessing:** Do not hallucinate APIs.
+    * **Research First:** Use `linkup`/`brave` to search for **December 2025 Industry Standards**, **Security Threats**, and **2026 UI Trends**.
+    * **Validation:** Use `docfork` to verify *every* external API signature.
+    * **Reasoning:** Engage `clear-thought-two` to architect complex flows *before* writing code.
 
 ---
-
 
 ## 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
 **Directives:** Detect the project type (`package.json`, `Cargo.toml`, `pyproject.toml`) and apply the corresponding **Apex Toolchain**.
 * **SCENARIO A: WEB / APP / EXTENSION (TypeScript)**
-    * **Stack:** **TypeScript 6.x** (Strict), **Vite 7** (Rolldown), **WXT** (Extensions/MV3 Manifest), **Tauri v2.x** (If native layer is required).
+    * **Stack:** **TypeScript 6.x** (Strict), **Vite 7** (Rolldown), **Tauri v2.x** (Native), **WXT** (Extensions).
     * **State:** **Signals** (Standardized).
     * **Lint/Test:** **Biome** (Speed) + **Vitest** (Unit) + **Playwright** (E2E).
+    * **Project Specifics for AuraMind-AI-Emotional-Telemetry-Platform:**
+        * **Language:** JavaScript detected (implies potential for TypeScript migration).
+        * **Components:** Browser Extension (Manifest V3), Node.js API (Optional).
+        * **Chosen Toolchain:** Given the JavaScript base and browser extension nature, we adopt the TypeScript/Web stack. **Recommendation:** Migrate to TypeScript for enhanced safety and maintainability. Vite 7 for bundling, WXT for extensions, and Playwright for robust E2E testing.
 * **SCENARIO B: SYSTEMS / PERFORMANCE (Rust/Go)**
     * **Stack:** **Rust 1.8x** (Cargo) or **Go 1.2x**.
     * **Lint:** **Clippy** / **GolangCI-Lint**.
 * **SCENARIO C: DATA / SCRIPTS / AI (Python)**
     * **Stack:** **uv** (Manager), **Ruff** (Linter), **Pytest** (Test).
-    * **Project Specific:** `AuraMind-AI-Emotional-Telemetry-Platform` is a Full-Stack Platform centered on a Browser Extension, therefore, the **Apex Toolchain for Scenario A** will be applied.
 
 ---
 
+## 4. AI ORCHESTRATION & GEMINI PROTOCOL (DECEMBER 2025)
+**Mandate:** If integrating AI, strictly follow this **Fallback Cascade**.
+* **Tier 1 (Intelligence):** `gemini-3-pro` (Stable Dec 2025) - Multimodal Reasoning.
+* **Tier 2 (Reasoning):** `gemini-2.5-pro` (Legacy Stable) - Deep analysis/STEM.
+* **Tier 3 (Balanced):** `gemini-2.5-flash` - High Volume/Low Latency.
+* **Tier 4 (Speed):** `gemini-2.5-flash-lite` - Cost-efficiency.
+* **Circuit Breaker:** If a model fails (429/500), trigger **Cool-Off** and fallback immediately.
 
-## 4. RECURSIVE PERFECTION LOOP (THE "ZERO-ERROR" MANDATE)
-**Context:** The user demands absolute perfection. You must not stop until the codebase is pristine.
+---
+
+## 5. RECURSIVE PERFECTION LOOP (THE "ZERO-ERROR" MANDATE)
 **The Loop:**
 1.  **Analyze:** Scan the codebase.
 2.  **Fix:** Apply architectural patterns and fixes.
-3.  **Lint/Format:** Run `biome check --apply` / `ruff check --fix`.
-4.  **Test:** Run `vitest` / `pytest`.
+3.  **Lint/Format:** Run the stack's strictest linter (Biome/Ruff).
+4.  **Test:** Run the test suite.
 5.  **DECISION GATE:**
-    * **IF** Errors/Warnings exist -> **GO TO STEP 2** (Self-Correct immediately).
+    * **IF** Errors/Warnings exist -> **GO TO STEP 2** (Self-Correct).
     * **IF** Clean -> **COMMIT** and Present.
 **Constraint:** **DO NOT STOP** until the build is perfectly clean.
 
 ---
 
-
-## 5. CORE ARCHITECTURAL PRINCIPLES
+## 6. CORE ARCHITECTURAL PRINCIPLES
 * **SOLID MANDATE:** SRP, OCP, LSP, ISP, DIP.
-* **MODULARITY:** Feature-First Structure (`features/telemetry-capture`), not type.
-* **CQS:** Methods must be **Commands** (Action) or **Queries** (Data), never both.
-* **12-Factor App:** Config in environment; backing services attached resources.
+* **ROOT DIRECTORY HYGIENE (ANTI-BLOAT):**
+    * **Config Only:** The root directory (`/`) is reserved **STRICTLY** for configuration (`package.json`, `README.md`, `.gitignore`).
+    * **No Root Scripts:** Do not create a `scripts/` folder in the root.
+    * **Containment:** All source code goes to `src/`. All verification code goes to `tests/`.
+* **MODULARITY:** Feature-First Structure (`src/features/auth`), not type.
+* **CQS:** Methods must be **Commands** or **Queries**, never both.
+* **12-Factor App:** Config in environment; backing services attached.
 
 ---
 
-
-## 6. CODE HYGIENE & STANDARDS (READABILITY FIRST)
+## 7. CODE HYGIENE & STANDARDS (READABILITY FIRST)
 * **SEMANTIC NAMING PROTOCOL:**
     * **Descriptive Verbs:** `calculateWeeklyPay` (Good) vs `calc` (Bad).
     * **Casing:** `camelCase` (JS/TS), `snake_case` (Python), `PascalCase` (Classes).
@@ -84,13 +86,12 @@
 
 ---
 
-
-## 7. RELIABILITY, SECURITY & SUSTAINABILITY
+## 8. RELIABILITY, SECURITY & SUSTAINABILITY
 * **DEVSECOPS PROTOCOL:**
-    * **Zero Trust:** Sanitize **ALL** inputs (OWASP Top 10 2025). **CRITICAL for telemetry data.**
+    * **Zero Trust:** Sanitize **ALL** inputs (OWASP Top 10 2025).
     * **Supply Chain:** Generate **SBOMs** for all builds.
     * **Fail Fast:** Throw errors immediately on invalid state.
-    * **Encryption:** Secure sensitive data at rest and in transit. **Privacy-First Mandate.**
+    * **Encryption:** Secure sensitive data at rest and in transit.
 * **EXCEPTION HANDLING:**
     * **Resilience:** App must **NEVER** crash. Wrap critical I/O in `try-catch-finally`.
     * **Recovery:** Implement retry logic with exponential backoff.
@@ -101,24 +102,26 @@
 
 ---
 
-
-## 8. COMPREHENSIVE TESTING STRATEGY
-* **FOLDER SEPARATION PROTOCOL:**
-    * **Production Purity:** Source folder is for code ONLY.
-    * **Mirror Structure:** Tests reside exclusively in `tests/`.
+## 9. COMPREHENSIVE TESTING & VERIFICATION STRATEGY
+* **FOLDER SEPARATION PROTOCOL (STRICT):**
+    * **Production Purity:** The `src/` or `extension/` folder is a **Production-Only Zone**. It must contain **ZERO** test files and **ZERO** test scripts.
+    * **Total Containment:** **ALL** verification scripts, validation runners, static analysis tools, and test specs must reside exclusively in `tests/`.
+    * **Structure:**
+        * `tests/unit/`: Unit tests.
+        * `tests/e2e/`: Playwright/Selenium tests.
+        * `tests/scripts/`: Verification/Validation scripts (e.g., `verify-imports.js`, `audit-coverage.js`).
 * **TESTING PYRAMID (F.I.R.S.T.):**
     * **Fast:** Tests run in milliseconds.
-    * **Isolated:** No external dependencies (Mock DB/Network/Extension APIs).
+    * **Isolated:** No external dependencies.
     * **Repeatable:** Deterministic results.
 * **COVERAGE MANDATE:**
     * **1:1 Mapping:** Every source file **MUST** have a corresponding test file.
-    * **Scenario Coverage:** Test **Success**, **Failure**, and **Edge Cases** (e.g., permission revocation, network loss).
+    * **Target:** 100% Branch Coverage.
     * **Zero-Error Standard:** Software must run with 0 console errors.
 
 ---
 
-
-## 9. UI/UX AESTHETIC SINGULARITY (2026 STANDARD)
+## 10. UI/UX AESTHETIC SINGULARITY (2026 STANDARD)
 * **VISUAL LANGUAGE:**
     * **Style:** Blend **Liquid Glass** + **Neo-Brutalist** + **Material You 3.0**.
     * **Motion:** **MANDATORY** fluid animations (`transition: all 0.2s`).
@@ -126,15 +129,14 @@
     * **INP Optimization:** Interaction to Next Paint < 200ms.
     * **Optimistic UI:** UI updates instantly; server syncs in background.
 * **INTERACTION DESIGN:**
-    * **Hyper-Personalization:** Adapt layouts based on user behavior and historical emotional baselines.
+    * **Hyper-Personalization:** Adapt layouts based on user behavior.
     * **Micro-interactions:** Every click/hover must have feedback.
 * **HYPER-CONFIGURABILITY:**
-    * **Mandate:** Every feature/color/data retention policy must be user-configurable via Settings.
+    * **Mandate:** Every feature/color must be user-configurable via Settings.
 
 ---
 
-
-## 10. DOCUMENTATION & VERSION CONTROL
+## 11. DOCUMENTATION & VERSION CONTROL
 * **HERO-TIER README (SOCIAL PROOF):**
     * **BLUF:** Bottom Line Up Front. Value prop first.
     * **Live Sync:** Update README **IN THE SAME TURN** as code changes.
@@ -148,24 +150,22 @@
 
 ---
 
-
-## 11. AUTOMATION SINGULARITY (GITHUB ACTIONS)
+## 12. AUTOMATION SINGULARITY (GITHUB ACTIONS)
 * **Mandate:** Automate CI/CD immediately.
 * **Workflows:**
-    1.  **Integrity:** Lint (Biome) + Test (Vitest/Playwright) on Push.
-    2.  **Security:** Audit dependencies + SBOM generation for Node/TS components.
-    3.  **Release:** Semantic Versioning + Artifact Upload (for WXT/Node releases).
+    1.  **Integrity:** Lint + Test on Push.
+    2.  **Security:** Audit dependencies + SBOM.
+    3.  **Release:** Semantic Versioning + Artifact Upload.
     4.  **Deps:** Auto-merge non-breaking updates.
 
 ---
 
-
-## 12. THE ATOMIC EXECUTION CYCLE
+## 13. THE ATOMIC EXECUTION CYCLE
 **You must follow this loop for EVERY logical step:**
 1.  **Audit:** Scan state (`ls -R`) & History (`git log`).
 2.  **Research:** Query Best Practices & Trends.
 3.  **Plan:** Architect via `clear-thought-two`.
-4.  **Act:** Fix Code + Polish + Add Settings + Write Tests.
+4.  **Act:** Fix Code + Polish + Add Settings + Write Tests (in `tests/`).
 5.  **Automate:** Create/Update CI/CD YAMLs.
 6.  **Docs:** Update `README.md` (Replication Ready).
 7.  **Verify:** Run Tests & Linters.
