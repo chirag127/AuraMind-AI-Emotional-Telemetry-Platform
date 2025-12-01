@@ -1,38 +1,35 @@
-# Package Manager Files
-node_modules/
-npm-debug.log
-yarn-debug.log
-yarn-error.log
-.pnpm-debug.log
+# Apex Technical Authority Standard .gitignore (Node.js/TypeScript Extension Project)
 
-# Build Output
-dist/
-build/
-.vite/
+# Dependencies
+/node_modules
 
-# IDE/Editor Files
-.vscode/
-.idea/
-*.iml
-*.ipr
-*.iws
+# Build artifacts (Vite/WXT)
+/dist
+/build
+/coverage
+/test-results
+/.vite
+/.wxt
 
-# Environment Variables
+# Logs and Debugging
+*.log
+*.pid
+*.seed
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Configuration and Environment Variables
+# Always ignore files containing sensitive API keys or credentials
 .env
 .env.*
-!.env.example
+.env.local
 
-# Logging
-*.log
-npm-log.log
+# IDE and Editor Files
+.idea
+.vscode
+*.swp
 
-# OS Generated Files
+# Operating System files
 .DS_Store
 Thumbs.db
-
-# Testing
-coverage/
-.nyc_output/
-
-# Extension Specific Files
-.wxt/
