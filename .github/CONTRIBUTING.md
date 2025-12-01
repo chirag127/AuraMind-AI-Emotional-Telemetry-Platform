@@ -1,108 +1,106 @@
-# Contributing to AuraMind-AI-Emotional-Telemetry-Platform
+# 🤝 Contributing to AuraMind-AI-Emotional-Telemetry-Platform
 
-Thank you for your interest in contributing to AuraMind-AI-Emotional-Telemetry-Platform! We aim for a high-velocity, zero-defect development process, adhering to FAANG-level standards and the wisdom of "Managing the Unmanageable." By contributing, you agree to uphold these standards and the project's philosophy: "Zero-Defect, High-Velocity, Future-Proof."
+Thank you for considering contributing to AuraMind! We welcome contributions from everyone, whether it's bug reports, feature requests, documentation improvements, or code. To ensure a smooth and productive experience for all, please follow these guidelines.
 
-## 1. Code of Conduct
+## 1. Our Philosophy & Standards
 
-This project adheres to a Contributor Covenant Code of Conduct. Please review the [CODE_OF_CONDUCT.md](https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform/blob/main/CODE_OF_CONDUCT.md) file for details.
+This project adheres to the **Apex Technical Authority** standards, emphasizing **Zero-Defect, High-Velocity, Future-Proof** development. This means we value:
 
-## 2. Prerequisites
+*   **Clarity:** Well-documented code and clear communication.
+*   **Quality:** Robust testing, strict linting, and adherence to architectural principles (SOLID, DRY, YAGNI).
+*   **Security:** Privacy-by-design is paramount, especially given the sensitive nature of emotional telemetry.
+*   **Efficiency:** Leveraging modern tooling for rapid development and stable builds.
 
-Before you can contribute, ensure you have the following set up:
+For detailed technical directives, please refer to our `AGENTS.md`.
 
-*   **Node.js:** Version 20+ (Required for both extension and API development).
-*   **npm/yarn/pnpm:** A package manager.
-*   **Git:** Latest stable version.
-*   **IDE:** VS Code with TypeScript and Prettier extensions recommended.
+## 2. Getting Started
 
-## 3. Getting Started
+### 2.1. Prerequisites
 
-1.  **Fork the Repository:** Create your own fork of `chirag127/AuraMind-AI-Emotional-Telemetry-Platform`.
-2.  **Clone Your Fork:** `git clone git@github.com:chirag127/AuraMind-AI-Emotional-Telemetry-Platform.git`
-3.  **Navigate to Project:** `cd AuraMind-AI-Emotional-Telemetry-Platform`
-4.  **Install Dependencies:**
-    bash
-    npm install
-    # or
-    yarn install
-    # or
-    pnpm install
-    
-5.  **Set Up Pre-commit Hooks:**
-    bash
-    npm run prepare
-    # or
-    yarn prepare
-    # or
-    pnpm prepare
-    
-    This installs linters and formatters (Biome) to ensure code quality before commits.
+Before you can contribute, ensure you have the following installed:
 
-## 4. Development Workflow
+*   **Git:** For version control.
+*   **Node.js & npm/yarn/pnpm:** For the browser extension development (`wxt` framework).
+*   **Node.js (LTS version):** For the optional API backend.
 
-We follow a strict development loop to ensure code quality and velocity:
+Refer to `README.md` for specific version requirements.
 
-1.  **Create a Branch:** Always create a new branch for your feature or fix.
-    bash
-    git checkout -b feat/your-feature-name
-    # or
-    git checkout -b fix/your-bug-fix
-    
-2.  **Code:** Implement your changes. Follow the project's coding standards (see Section 5).
-3.  **Test:** Write comprehensive unit and integration tests for your changes. Ensure 100% branch coverage.
-    *   **Extension Tests:** `npm run test:extension` (using Vitest)
-    *   **API Tests:** `npm run test:api` (using Vitest)
-    *   **E2E Tests:** `npx playwright test`
-4.  **Lint & Format:** Run the linter and formatter.
-    bash
-    npm run lint
-    npm run format
-    
-    The pre-commit hooks will automatically run these on `git commit`.
-5.  **Build:** Ensure the project builds successfully.
-    *   **Extension Build:** `npm run build:extension`
-    *   **API Build:** `npm run build:api`
-6.  **Commit:** Commit your changes using **Conventional Commits**.
-    bash
-    git commit -m "feat: Implement user profile page"
-    # or
-    git commit -m "fix: Resolve null pointer in sentiment analysis"
-    
-7.  **Push:** Push your branch to your fork.
-    bash
-    git push origin feat/your-feature-name
-    
-8.  **Open a Pull Request:** Create a Pull Request against the `main` branch of the `chirag127/AuraMind-AI-Emotional-Telemetry-Platform` repository.
+### 2.2. Cloning the Repository
 
-## 5. Coding Standards & Principles
+Clone the repository locally using your preferred Git client:
 
-*   **Language:** TypeScript (Strict Mode). Use the latest stable ECMAScript features.
-*   **Architecture:** Follow the FSD (Feature-Sliced Design) pattern for the extension and a Modular Monolith/Microservices approach for the API. Adhere to SOLID principles.
-*   **Tooling:** Use Vite for building, Biome for linting/formatting, Vitest for unit tests, and Playwright for E2E tests.
-*   **AI Integration:** If developing AI features, adhere to the [AGENTS.md](https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform/blob/main/AGENTS.md) directives, prioritizing privacy and responsible AI practices.
-*   **Code Style:** Self-documenting code is paramount. Avoid unnecessary comments. Use clear, descriptive names (camelCase for JS/TS).
-*   **Error Handling:** Implement robust error handling. Use `try-catch-finally` blocks and fail fast.
-*   **Security:** Adhere to DevSecOps principles (OWASP Top 10 2025). Sanitize all inputs.
+bash
+git clone https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform.git
+cd AuraMind-AI-Emotional-Telemetry-Platform
 
-## 6. Pull Request Process
 
-*   **Target Branch:** All PRs should target the `main` branch.
-*   **Description:** Provide a clear and concise description of your changes, including the problem solved and the solution implemented.
-*   **Tests:** Ensure all tests are passing and new tests cover your changes.
-*   **CI/CD:** All PRs will be checked by automated CI/CD pipelines. Do not merge until all checks pass.
-*   **Reviews:** Expect at least one reviewer to approve your PR. Be receptive to feedback.
+### 2.3. Setting Up the Development Environment
 
-## 7. Reporting Issues
+Follow the setup instructions in the `README.md` to install dependencies and configure the development environment for both the browser extension and the Node.js API.
 
-*   **Bug Reports:** Please use the provided [Bug Report Template](https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform/issues/new?template=bug_report.md).
-    *   Include a clear title.
-    *   Provide steps to reproduce the bug.
-    *   Describe the expected and actual behavior.
-    *   Include relevant logs, screenshots, or error messages.
-*   **Feature Requests:** Feel free to open an issue detailing your proposed feature.
+## 3. How to Contribute
 
-## 8. Community
+### 3.1. Reporting Bugs
 
-Join our community discussions on GitHub Discussions or other platforms (TBD). Let's build a privacy-first AI emotional telemetry platform together!
+If you find a bug, please submit an issue using the `Bug Report` template. Provide as much detail as possible:
 
-By contributing, you agree that your contributions will be licensed under the terms of the [LICENSE](https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform/blob/main/LICENSE) file (CC BY-NC).
+*   **Clear Title:** Briefly describe the bug.
+*   **Steps to Reproduce:** Detailed, step-by-step instructions.
+*   **Expected Behavior:** What should have happened?
+*   **Actual Behavior:** What actually happened?
+*   **Environment:** Browser/OS, Node.js version, relevant configuration.
+*   **Screenshots/Logs:** If applicable.
+
+### 3.2. Suggesting Enhancements or Features
+
+Use the `Feature Request` issue template. Explain the proposed feature and its benefits. If you're willing to implement it, please mention that in your request!
+
+### 3.3. Contributing Code
+
+1.  **Fork the Repository:** Create a personal fork of the `chirag127/AuraMind-AI-Emotional-Telemetry-Platform` repository.
+2.  **Create a Feature Branch:** Branch off the `main` branch for your new feature or bug fix (e.g., `git checkout -b feature/my-new-feature` or `git checkout -b fix/bug-description`).
+3.  **Make Your Changes:** Implement your code, ensuring it adheres to project standards.
+4.  **Test Your Changes:** Write and run tests to verify your code. Ensure all existing tests pass.
+5.  **Lint and Format:** Run the linter and formatter (`npx @biomejs/biome format --write .` and `npx @biomejs/biome lint --apply .`) to ensure code style consistency.
+6.  **Commit Your Changes:** Write clear, concise commit messages. Follow conventional commits if possible.
+7.  **Push to Your Fork:** Push your branch to your fork (e.g., `git push origin feature/my-new-feature`).
+8.  **Open a Pull Request:** Submit a pull request against the `main` branch of the `chirag127/AuraMind-AI-Emotional-Telemetry-Platform` repository. Provide a clear description of your changes.
+
+#### 3.3.1. Code Style & Quality
+
+*   **Language:** JavaScript/TypeScript
+*   **Linter/Formatter:** Biome (`@biomejs/biome`)
+*   **Testing:** Vitest (Unit/Integration), Playwright (E2E)
+*   **Architecture:** Follows principles outlined in `AGENTS.md` (e.g., modularity, privacy-first).
+
+### 3.4. Documentation
+
+Well-documented code is crucial. Please update or add documentation for any new features or significant changes. This includes:
+
+*   Code comments for complex logic.
+*   Updates to the `README.md` if the user experience changes.
+*   Updates to `AGENTS.md` if new technical directives are introduced.
+
+## 4. Pull Request Process
+
+*   **One Request, One Goal:** Each pull request should address a single concern (bug fix, feature).
+*   **Clear Descriptions:** Explain *what* the change is and *why* it's needed.
+*   **Link to Issues:** Reference any related issues using keywords like `Fixes #123` or `Closes #456`.
+*   **Code Reviews:** Expect constructive feedback during code review. Be open to suggestions and willing to make necessary changes.
+*   **CI/CD:** Automated checks will run on your PR. Ensure all checks pass before merging.
+
+## 5. Communication
+
+*   **Issues:** Use GitHub Issues for bug reports, feature requests, and discussions.
+*   **Pull Requests:** Use PRs for code contributions.
+*   **Discussions:** For broader topics or questions not suitable for issues, consider using GitHub Discussions if enabled.
+
+## 6. Code of Conduct
+
+This project is governed by a Code of Conduct (if applicable, otherwise state that we adhere to general respectful communication). We expect all contributors to uphold these standards. Please treat everyone with respect and professionalism.
+
+## 7. Maintainers
+
+*   **chirag127**
+
+Thank you again for contributing!
