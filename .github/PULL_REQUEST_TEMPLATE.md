@@ -1,63 +1,55 @@
-# Pull Request: Enhancing AuraMind Emotional Telemetry Platform
+# Pull Request: Apex Velocity Review
 
-## 🎯 PR Type Classification (Select one or more)
+## 🚀 Feature / Fix / Chore
 
-- [ ] `feat`: A new feature aligned with the 2026 roadmap.
-- [ ] `fix`: A bug fix addressing a security vulnerability or operational defect.
-- [ ] `refactor`: Code restructuring without changing external behavior (e.g., adapting to Biome standard).
-- [ ] `docs`: Documentation update (e.g., README, AGENTS.md).
-- [ ] `chore`: Maintenance tasks (dependency upgrades, CI configuration).
-- [ ] `perf`: Performance improvement targeting INP (<200ms) or bundle size.
+**(Select one checkbox below)**
 
-## 📝 Feature/Fix Summary (BLUF)
-
-**Provide a high-level, two-sentence summary of the change.** What does this PR achieve for the user or the platform's technical integrity?
+- [ ] **Feature:** Implements new functionality or enhancement.
+- [ ] **Fix:** Corrects a bug or addresses an issue.
+- [ ] **Chore/Refactor:** Code cleanup, dependency update, or internal structural change.
 
 ---
 
-## 🧠 Architectural Alignment & Rationale
+## 📝 Summary of Changes
 
-*How does this change adhere to the Apex principles (SOLID, DRY, Zero-Trust)?*
+**BLUF (Bottom Line Up Front):** Briefly explain *what* this PR accomplishes and *why* it was necessary.
 
-1.  **Principle Addressed:** (e.g., Single Responsibility Principle)
-2.  **Rationale:** (Why was this specific approach chosen over alternatives?)
-
----
-
-## 🛠 Implementation Details (The How)
-
-*Describe the significant changes made. Be specific about new modules, API interactions, or data flow modifications.*
-
-**Extension Changes (Manifest V3 / TypeScript):**
-typescript
-// Snippet showing critical logic change if applicable
-
-
-**Backend/API Changes (Node.js/Sentiment Analysis):**
-javascript
-// Snippet showing critical logic change if applicable
-
+[Describe the core change here. Focus on the business/architectural impact.]
 
 ---
 
-## ✅ Verification Strategy
+## 🎯 Context & Rationale (The "Why")
 
-*Detail how you verified this change meets the **100% Branch Coverage Mandate**.*
+Provide detailed background. Reference any associated issue numbers (`Closes #XXX`).
 
-1.  **Unit Tests Added/Modified:** (Path to new Vitest files)
-2.  **E2E Scenarios Covered:** (Which Playwright scenarios validate this?)
-3.  **Manual Verification Steps:** (If applicable, steps to test manually in a local build.)
-
----
-
-## 🛑 Security & Compliance Check (Zero-Trust Protocol)
-
-- [ ] **Input Sanitization:** Is **ALL** external/user input sanitized against OWASP 2025 risks? (Yes/No)
-- [ ] **Data Flow:** Does any telemetry data bypass the defined privacy filters in the extension? (Yes/No)
-- [ ] **Secrets:** Are any secrets exposed or hardcoded? (If Yes, **STOP** and escalate immediately.)
+*   **Architectural Alignment:** How does this change align with the **SOLID**, **DRY**, and **YAGNI** principles enforced by the Apex Authority?
+*   **Security/Privacy Note (Critical for AuraMind):** Detail any changes related to data handling, local storage access, or API interaction compliance (Manifest V3 standards).
 
 ---
 
-## 🖼️ Screenshots/Artifacts (If applicable to UI/UX)
+## 💡 Technical Details
 
-<!-- Add screenshots showing the before/after or the result of the feature -->
+Describe the *how*.
+
+1.  **Stack Used:** (e.g., Manifest V3 APIs, Node.js backend logic, React component updates).
+2.  **Verification Steps:** How can the reviewer test this change locally? (e.g., "Navigate to `/dashboard`, enable telemetry, check network tab for POST to /api/telemetry.")
+3.  **Potential Side Effects:** Are there any known regressions or performance impacts?
+
+---
+
+## ✅ Checklist for Submission (Self-Review)
+
+**I confirm that I have reviewed this PR against the following Apex Standards:**
+
+- [ ] Code style adheres to **Ruff** formatting standards.
+- [ ] All new/modified logic has corresponding **Pytest** coverage (or appropriate browser extension testing).
+- [ ] Documentation (internal comments, JSDoc/Type hints) is up-to-date.
+- [ ] **Manifest V3 compliance** maintained for the extension components.
+- [ ] Security protocols (privacy-by-design) have been respected.
+- [ ] The changes build and run successfully in the local development environment.
+
+---
+
+## 📸 Visual Proof (If Applicable to UI/UX)
+
+(Attach screenshots or GIFs if modifying the React frontend or extension UI.)
