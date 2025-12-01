@@ -1,59 +1,52 @@
 # Security Policy
 
-## Reporting Security Vulnerabilities
+## Supported Versions
 
-We take security very seriously. If you believe you have found a security vulnerability in this project, please report it to us immediately.
+We are committed to maintaining the security of our platform. We actively support and patch the **latest stable release** of the AuraMind platform.
 
-### How to Report
+| Version | Supported          |
+|---------|--------------------|
+| Latest  | :white_check_mark: |
 
-Please report security vulnerabilities by:
+Older versions are not actively monitored for security vulnerabilities and are considered end-of-life.
 
-1.  **Opening an Issue:** Create a new issue in this repository.  Clearly describe the vulnerability, the steps to reproduce it, and the potential impact.  Use the `Bug Report` template and mention "Security Vulnerability" in the title.
-2.  **Email (Optional):** If you prefer, you can also email the maintainers directly.  Please look for the maintainer contact information in the `CONTRIBUTING.md` file or the project's documentation.  Provide the same level of detail as you would in an issue.
+## Reporting a Vulnerability
 
-### What to Include in Your Report
+We take all security vulnerabilities seriously. If you discover a vulnerability in AuraMind, please report it to us as soon as possible through one of the following channels:
 
-*   **Vulnerability Type:** Describe the type of vulnerability (e.g., cross-site scripting, SQL injection, buffer overflow).
-*   **Affected Code:** Identify the specific files or code sections where the vulnerability exists.
-*   **Steps to Reproduce:** Provide detailed steps that allow us to reproduce the vulnerability. Include any specific input, configurations, or actions required.
-*   **Expected Behavior:** Explain what should happen instead of the vulnerability.
-*   **Actual Behavior:** Describe the actual behavior or the outcome of the vulnerability.
-*   **Impact:** Explain the potential impact of the vulnerability. How could it be exploited?  What could an attacker achieve?
-*   **Proof of Concept (Optional):** If possible, provide a proof of concept (PoC) demonstrating the vulnerability.
+1.  **Email:** Send a detailed report to [security@auramind.io](mailto:security@auramind.io). Please use the subject line "Security Vulnerability Report - [Brief Description]".
+2.  **GitHub Security Advisory:** Submit a private vulnerability report via [GitHub's security advisory feature](https://github.com/AuraMindAI/AuraMind-AI-Emotional-Telemetry-Platform/security/advisories/new).
 
-### Response Time
+**Please do NOT disclose any vulnerability publicly until it has been addressed.**
 
-We will acknowledge your report as quickly as possible. We aim to respond within 48 hours.  We will investigate the vulnerability and work to fix it as soon as possible.
+**When reporting a vulnerability, please include:**
 
-### Our Commitment
+*   A clear description of the vulnerability.
+*   Steps to reproduce the vulnerability.
+*   The affected version(s) of AuraMind.
+*   Any potential impact or exploitability.
+*   Proof of Concept (PoC) code, if available.
+*   Your contact information.
 
-*   We will work to verify and address the vulnerability promptly.
-*   We will keep you informed of our progress.
-*   We may request additional information if needed.
-*   We will credit you in the release notes or security advisory if you report a valid vulnerability and wish to be acknowledged.
+## Vulnerability Disclosure Policy
+
+*   **Responsible Disclosure:** We encourage you to follow responsible disclosure practices. Please give us a reasonable time to fix the issue before making any information public.
+*   **No Harm:** Do not exploit any vulnerabilities you discover. This includes disrupting service, accessing or modifying data beyond what is necessary to confirm the vulnerability, or attempting to gain unauthorized access.
+*   **Good Faith:** We will not pursue legal action against individuals who report vulnerabilities in good faith and adhere to this policy.
+*   **Acknowledgement:** We will acknowledge receipt of your report promptly and will keep you informed of our progress in addressing the issue.
 
 ## Security Best Practices
 
-We are committed to building secure software. We follow these security best practices:
+As a platform for sensitive data, we adhere to the following security principles:
 
-*   **Input Validation:** We validate and sanitize all user inputs to prevent injection attacks (e.g., XSS, SQLi).
-*   **Authentication and Authorization:** We implement strong authentication and authorization mechanisms to protect sensitive resources.
-*   **Data Encryption:** We encrypt sensitive data at rest and in transit.
-*   **Regular Security Audits:** We conduct regular security audits and penetration testing to identify and address potential vulnerabilities.
-*   **Dependency Management:** We regularly update our dependencies to address security vulnerabilities in third-party libraries.
-*   **Code Reviews:** We conduct code reviews to identify and address security issues.
-*   **Secure Coding Practices:** We follow secure coding practices to prevent common security vulnerabilities.
-*   **Zero Trust Principles:** We apply Zero Trust principles.
+*   **Privacy-First Architecture:** Emotional telemetry data is processed locally by the browser extension whenever possible. Server-side processing is opt-in and anonymized.
+*   **Zero Trust:** All external inputs are strictly validated and sanitized against OWASP Top 10 (2025) vulnerabilities.
+*   **Data Encryption:** Sensitive data is encrypted both in transit (TLS/SSL) and at rest.
+*   **Dependency Auditing:** We regularly audit third-party dependencies for known vulnerabilities using automated tools.
+*   **Secure Development Lifecycle (SDL):** Security is integrated into every phase of development, from design to deployment.
+*   **Least Privilege:** Components and services operate with the minimum necessary permissions.
+*   **Rate Limiting:** The optional Node.js API is protected by robust rate limiting to prevent abuse.
 
-## Supported Versions
+## Security Contact
 
-We provide security updates for the latest version of the project.  We encourage users to keep their installations up to date.
-
-## Disclosure Policy
-
-We will publicly disclose security vulnerabilities after a fix has been released and users have had a reasonable amount of time to update their installations.  We will provide a security advisory with details about the vulnerability, the affected versions, and the recommended fix.
-
-## Contact
-
-For any security-related questions or concerns, please contact the maintainers. You can find contact information in the `CONTRIBUTING.md` file or the project's documentation.
-
+For general security inquiries or to discuss security-related matters that do not involve reporting a specific vulnerability, please contact [security@auramind.io](mailto:security@auramind.io).
