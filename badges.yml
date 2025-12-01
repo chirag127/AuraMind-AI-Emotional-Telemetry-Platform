@@ -1,34 +1,25 @@
-# Badges
-# https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform
-
-# Standard Badges
-- name: Build Status
-  image: https://img.shields.io/github/actions/workflow/user/chirag127/AuraMind-AI-Emotional-Telemetry-Platform/ci.yml?style=flat-square&logo=githubactions
-  url: https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform/actions/workflows/ci.yml
-- name: Code Coverage
-  image: https://img.shields.io/codecov/c/github/chirag127/AuraMind-AI-Emotional-Telemetry-Platform?style=flat-square&logo=codecov
-  url: https://codecov.io/gh/chirag127/AuraMind-AI-Emotional-Telemetry-Platform
-- name: Tech Stack - JavaScript
-  image: https://img.shields.io/badge/Tech%20Stack-JavaScript-323330?style=flat-square&logo=javascript
-  url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-- name: Tech Stack - Node.js
-  image: https://img.shields.io/badge/Tech%20Stack-Node.js-339933?style=flat-square&logo=nodedotjs
-  url: https://nodejs.org/
-- name: Tech Stack - React
-  image: https://img.shields.io/badge/Tech%20Stack-React-61DAFB?style=flat-square&logo=react
-  url: https://react.dev/
-- name: Tech Stack - Manifest V3
-  image: https://img.shields.io/badge/Tech%20Stack-Manifest%20V3-FF8C00?style=flat-square&logo=googlechrome
-  url: https://developer.chrome.com/docs/extensions/mv3
-- name: Linting - ESLint
-  image: https://img.shields.io/badge/Linting-ESLint-4B3263?style=flat-square&logo=eslint
-  url: https://eslint.org/
-- name: Formatting - Prettier
-  image: https://img.shields.io/badge/Formatting-Prettier-1A2933?style=flat-square&logo=prettier
-  url: https://prettier.io/
-- name: License
-  image: https://img.shields.io/badge/License-CC%20BY--NC%204.0-0073B7?style=flat-square&logo=creativecommons
-  url: https://creativecommons.org/licenses/by-nc/4.0/
-- name: GitHub Stars
-  image: https://img.shields.io/github/stars/chirag127/AuraMind-AI-Emotional-Telemetry-Platform?style=flat-square&logo=github
-  url: https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform
+badges:
+  - name: "Build Status"
+    alt: "Build Status"
+    image_url: "https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform/actions/workflows/ci.yml/badge.svg"
+    link_url: "https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform/actions/workflows/ci.yml"
+  - name: "Code Coverage"
+    alt: "Code Coverage"
+    image_url: "https://codecov.io/gh/chirag127/AuraMind-AI-Emotional-Telemetry-Platform/branch/main/graph/badge.svg?token=YOUR_CODECOV_TOKEN"
+    link_url: "https://codecov.io/gh/chirag127/AuraMind-AI-Emotional-Telemetry-Platform"
+  - name: "Tech Stack"
+    alt: "Tech Stack"
+    image_url: "https://img.shields.io/badge/Tech%20Stack-WXT%20%7C%20React%20%7C%20Node.js%20%7C%20TypeScript-blueviolet?style=flat-square"
+    link_url: "https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform"
+  - name: "Linting & Formatting"
+    alt: "Linting & Formatting: Biome"
+    image_url: "https://img.shields.io/badge/Lint%20%26%20Format-Biome-0E7CFF?style=flat-square&logo=biome"
+    link_url: "https://biomejs.dev/"
+  - name: "License"
+    alt: "License: CC BY-NC 4.0"
+    image_url: "https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey?style=flat-square"
+    link_url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  - name: "GitHub Stars"
+    alt: "GitHub Stars"
+    image_url: "https://img.shields.io/github/stars/chirag127/AuraMind-AI-Emotional-Telemetry-Platform?style=flat-square&color=yellow"
+    link_url: "https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform/stargazers"
