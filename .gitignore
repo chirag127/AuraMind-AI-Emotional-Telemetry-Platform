@@ -1,39 +1,38 @@
-# Dependency Directories
+# Package Manager Files
 node_modules/
-jspm_packages/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.pnpm-debug.log
 
-# Build Artifacts (Vite/Rollup)
+# Build Output
 dist/
-.vite/
 build/
+.vite/
 
-# Caching and Lockfiles
-.npm/
-.yarn/
-.pnp
-.pnp.js
-
-# Testing and Linting Caches
-.biome/
-coverage/
-playwright-report/
-
-# IDE and OS Specific Files
+# IDE/Editor Files
 .vscode/
 .idea/
-.DS_Store
-*.swp
+*.iml
+*.ipr
+*.iws
 
-# Environment Variables (Sensitive Data)
+# Environment Variables
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
-# Extension Artifacts (Manifest V3 Build Targets)
-.content-scripts-cache/
-manifest.json.bak
+# Logging
+*.log
+npm-log.log
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# OS Generated Files
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+
+# Extension Specific Files
+.wxt/
