@@ -6,7 +6,7 @@
 **Output Standard:** Deliver **EXECUTION-ONLY** results. No plans, no "reporting"—only executed code, updated docs, and applied fixes.
 **Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
 
----
+--- 
 
 ## 2. INPUT PROCESSING & COGNITION
 * **SPEECH-TO-TEXT INTERPRETATION PROTOCOL:**
@@ -19,7 +19,7 @@
     * **Validation:** Use `docfork` to verify *every* external API signature.
     * **Reasoning:** Engage `clear-thought-two` to architect complex flows *before* writing code.
 
----
+--- 
 
 ## 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
 **Directives:** Detect the project type (`package.json`, `Cargo.toml`, `pyproject.toml`) and apply the corresponding **Apex Toolchain**.
@@ -27,17 +27,13 @@
     * **Stack:** **TypeScript 6.x** (Strict), **Vite 7** (Rolldown), **Tauri v2.x** (Native), **WXT** (Extensions).
     * **State:** **Signals** (Standardized).
     * **Lint/Test:** **Biome** (Speed) + **Vitest** (Unit) + **Playwright** (E2E).
-    * **Project Specifics for AuraMind-AI-Emotional-Telemetry-Platform:**
-        * **Language:** JavaScript detected (implies potential for TypeScript migration).
-        * **Components:** Browser Extension (Manifest V3), Node.js API (Optional).
-        * **Chosen Toolchain:** Given the JavaScript base and browser extension nature, we adopt the TypeScript/Web stack. **Recommendation:** Migrate to TypeScript for enhanced safety and maintainability. Vite 7 for bundling, WXT for extensions, and Playwright for robust E2E testing.
 * **SCENARIO B: SYSTEMS / PERFORMANCE (Rust/Go)**
     * **Stack:** **Rust 1.8x** (Cargo) or **Go 1.2x**.
     * **Lint:** **Clippy** / **GolangCI-Lint**.
 * **SCENARIO C: DATA / SCRIPTS / AI (Python)**
     * **Stack:** **uv** (Manager), **Ruff** (Linter), **Pytest** (Test).
 
----
+--- 
 
 ## 4. AI ORCHESTRATION & GEMINI PROTOCOL (DECEMBER 2025)
 **Mandate:** If integrating AI, strictly follow this **Fallback Cascade**.
@@ -47,7 +43,7 @@
 * **Tier 4 (Speed):** `gemini-2.5-flash-lite` - Cost-efficiency.
 * **Circuit Breaker:** If a model fails (429/500), trigger **Cool-Off** and fallback immediately.
 
----
+--- 
 
 ## 5. RECURSIVE PERFECTION LOOP (THE "ZERO-ERROR" MANDATE)
 **The Loop:**
@@ -60,7 +56,7 @@
     * **IF** Clean -> **COMMIT** and Present.
 **Constraint:** **DO NOT STOP** until the build is perfectly clean.
 
----
+--- 
 
 ## 6. CORE ARCHITECTURAL PRINCIPLES
 * **SOLID MANDATE:** SRP, OCP, LSP, ISP, DIP.
@@ -72,7 +68,7 @@
 * **CQS:** Methods must be **Commands** or **Queries**, never both.
 * **12-Factor App:** Config in environment; backing services attached.
 
----
+--- 
 
 ## 7. CODE HYGIENE & STANDARDS (READABILITY FIRST)
 * **SEMANTIC NAMING PROTOCOL:**
@@ -84,7 +80,7 @@
     * **DRY & KISS:** Automate repetitive tasks. Keep logic simple.
     * **Zero Comments:** Code must be **Self-Documenting**. Use comments *only* for "Why".
 
----
+--- 
 
 ## 8. RELIABILITY, SECURITY & SUSTAINABILITY
 * **DEVSECOPS PROTOCOL:**
@@ -100,7 +96,7 @@
     * **Efficiency:** Optimize loops ($O(n)$ over $O(n^2)$).
     * **Lazy Loading:** Load resources only when needed.
 
----
+--- 
 
 ## 9. COMPREHENSIVE TESTING & VERIFICATION STRATEGY
 * **FOLDER SEPARATION PROTOCOL (STRICT):**
@@ -119,7 +115,7 @@
     * **Target:** 100% Branch Coverage.
     * **Zero-Error Standard:** Software must run with 0 console errors.
 
----
+--- 
 
 ## 10. UI/UX AESTHETIC SINGULARITY (2026 STANDARD)
 * **VISUAL LANGUAGE:**
@@ -134,7 +130,7 @@
 * **HYPER-CONFIGURABILITY:**
     * **Mandate:** Every feature/color must be user-configurable via Settings.
 
----
+--- 
 
 ## 11. DOCUMENTATION & VERSION CONTROL
 * **HERO-TIER README (SOCIAL PROOF):**
@@ -148,17 +144,17 @@
     * **Conventional Commits:** Strict format (`feat:`, `fix:`, `docs:`).
     * **Semantic Versioning:** Enforce `Major.Minor.Patch`.
 
----
+--- 
 
 ## 12. AUTOMATION SINGULARITY (GITHUB ACTIONS)
 * **Mandate:** Automate CI/CD immediately.
-* **Workflows:**
+* **Workflows:** 
     1.  **Integrity:** Lint + Test on Push.
     2.  **Security:** Audit dependencies + SBOM.
     3.  **Release:** Semantic Versioning + Artifact Upload.
     4.  **Deps:** Auto-merge non-breaking updates.
 
----
+--- 
 
 ## 13. THE ATOMIC EXECUTION CYCLE
 **You must follow this loop for EVERY logical step:**
@@ -172,3 +168,44 @@
 8.  **REITERATE:** If *any* error/warning exists, fix it immediately.
     **DO NOT STOP** until the build is perfectly clean.
 9.  **Commit:** `git commit` immediately (Only when clean).
+
+--- 
+
+## 14. PROJECT-SPECIFIC AGENT DIRECTIVES (AuraMind-AI-Emotional-Telemetry-Platform)
+
+* **TECHNOLOGY STACK (LATE 2025):**
+    * **Browser Extension:** **TypeScript 6.x** (Strict), **WXT Framework**, **Vite 7** (Bundler).
+    * **Backend API:** **Node.js 22.x**, **TypeScript 6.x**.
+    * **Frontend (Optional/API):** **React 19**, **Vite 7**.
+    * **Linting/Formatting:** **Biome** (All files).
+    * **Testing:** **Vitest** (Unit Tests), **Playwright** (E2E Tests).
+* **ARCHITECTURE:**
+    * **Extension:** Manifest V3 compliant, **Feature-Sliced Design (FSD)** for modularity.
+    * **API:** **Modular Monolith** or **Microservices** (if complexity warrants), adhering to **Hexagonal Architecture (Ports & Adapters)**.
+    * **State Management:** **Signals** for reactive UI updates.
+* **AI INTEGRATION:**
+    * **Primary Model:** `gemini-3-pro` for advanced sentiment analysis and emotional state inference.
+    * **Fallback Models:** `gemini-2.5-pro`, `gemini-2.5-flash` as per Protocol 4.
+    * **Data Handling:** Strict adherence to **privacy-by-design**. All sensitive telemetry processed **locally** within the extension whenever possible. API usage opt-in and anonymized.
+* **VERIFICATION PROTOCOL:**
+    * **Linters:** **Biome** must pass with zero errors/warnings.
+    * **Unit Tests:** **Vitest** must achieve 100% branch coverage in `tests/unit/`.
+    * **E2E Tests:** **Playwright** must validate core user flows in `tests/e2e/`.
+    * **API Contract:** OpenAPI/Swagger definitions for the Node.js API.
+    * **CI/CD:** GitHub Actions workflows for Lint, Test, Security Audits, and Release.
+* **SECURITY MANDATES:**
+    * **OWASP Top 10 (2025):** Strict mitigation for Injection, Broken Access Control, Security Misconfiguration, Sensitive Data Exposure, etc.
+    * **Manifest V3 Security:** Adhere to all V3 extension security guidelines.
+    * **API Security:** Implement robust authentication, authorization, and rate limiting.
+* **CODE STANDARDS:**
+    * **TypeScript Strict Mode:** `strict: true`, `noImplicitAny: true`, `strictNullChecks: true`.
+    * **CQS:** Enforce Command/Query Separation.
+    * **DRY/KISS:** Minimize complexity and duplication.
+    * **Zero Comments:** Code must be self-documenting.
+* **DOCUMENTATION:**
+    * **README:** Must include Live Badges, Architecture Diagram, Setup, Usage, Contribution, and the AI Agent Directives block.
+    * **AGENTS.md:** This document, detailing the agent's operational directives.
+* **EXTERNAL LINKS:**
+    * **Repository:** `https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform`
+    * **CI/CD:** `https://github.com/chirag127/AuraMind-AI-Emotional-Telemetry-Platform/actions`
+    * **Codecov:** `https://codecov.io/gh/chirag127/AuraMind-AI-Emotional-Telemetry-Platform`
