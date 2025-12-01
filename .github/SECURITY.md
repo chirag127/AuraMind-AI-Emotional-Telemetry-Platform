@@ -1,66 +1,58 @@
 # Security Policy for AuraMind-AI-Emotional-Telemetry-Platform
 
-## 1. Commitment to Security
+As the Apex Technical Authority, security is treated as a **Tier 0 requirement**, integrated via a strict DevSecOps protocol built on **Zero Trust** principles, adhering to the OWASP Top 10 (2025 standards).
 
-The **AuraMind-AI-Emotional-Telemetry-Platform** is built on a **Privacy-First** architecture, prioritizing local processing and user data sovereignty. We treat security as a non-negotiable component of our design, adhering to the principle of **Zero Trust** (as defined by the Apex Technical Authority). Security vulnerability reporting follows a rigorous, structured process to ensure rapid mitigation.
+## 1. Supported Versions
 
---- 
+This repository actively maintains the latest stable releases for all components:
 
-## 2. Supported Versions
+| Component | Version Status | Notes |
+| :--- | :--- | :--- |
+| Core Language | TypeScript 6.x | Strict Mode Enabled |
+| Frontend Runtime | Vite 7.x | Rollup Backend |
+| Browser Extension | Manifest V3 | Strict Content Security Policy enforced. |
+| Backend API | Node.js (LTS) | Security auditing via `npm audit` and GitHub Dependabot. |
 
-| Version | Status | Support Window | Notes |
-| :--- | :--- | :--- | :--- |
-| `1.x.x` (Current) | Active | Ongoing | Immediate patching for Critical/High severity findings. |
-| `0.x.x` (Previous) | Maintenance | 90 Days Post-Release | Only Critical severity vulnerabilities will be backported. |
+## 2. Reporting a Vulnerability
 
---- 
+We value security researchers and internal developers who report potential vulnerabilities. All reports are treated with the highest level of confidentiality and urgency.
 
-## 3. Reporting a Vulnerability
+**Reporting Procedure:**
 
-If you discover a security issue, **DO NOT** file a public issue or commit code changes before coordinating with the maintainers. Please follow the structured disclosure process below:
+1.  **DO NOT** open a public issue for security concerns.
+2.  Immediately send a detailed report via email to: `security@chirag127.dev`.
+3.  If reporting externally, please follow our disclosure timeline (Section 3).
+4.  Use clear, actionable steps to reproduce the vulnerability (Proof of Concept).
 
-### A. Initial Disclosure (Private Contact)
+Reports will be acknowledged within **24 hours**.
 
-1.  **Primary Contact:** Please email the Security Team Lead at `security@auramind-platform.dev` (Placeholder).
-2.  **Subject Line:** `[SECURITY] Vulnerability Report: [Brief Component Name]`
-3.  **Required Information:** Your report must include the following details to facilitate rapid triage (following the **APEX VULNERABILITY SCHEMA**):
-    *   **Vulnerability Type:** (e.g., XSS, SSRF, Information Leak, Logic Flaw).
-    *   **Affected Component:** (e.g., Browser Extension Manifest V3, Node.js API route `/api/v1/sentiment`).
-    *   **Proof of Concept (PoC):** Detailed, non-destructive steps to reproduce the issue.
-    *   **Severity Assessment:** Your recommendation based on impact (Critical, High, Medium, Low).
-    *   **Data Impact:** Explicitly state if user **PII or emotional telemetry data** is exposed or compromised.
+## 3. Disclosure Policy
 
-### B. Review and Triage
+We adhere to a responsible disclosure timeline to ensure a fix is available before public knowledge of a vulnerability:
 
-Upon receipt, the security team will acknowledge your report within **48 hours**. We will assign an internal severity rating and begin immediate remediation efforts under the scope of the **RECURSIVE PERFECTION LOOP**.
+1.  **Triage (0 - 7 days):** Security team analyzes and prioritizes the report.
+2.  **Remediation (7 - 45 days):** Development of fix, internal testing, and security hardening.
+3.  **Coordinated Public Disclosure (Day 46+):** Once the patch is released (via a new version release), we will coordinate with the reporter, if desired, for joint public acknowledgement.
 
-### C. Public Disclosure
+## 4. Security-Focused Architecture Directives
 
-Public disclosure of the vulnerability and fix will occur **ONLY** after:
-1.  A patch has been released to the main branch and deployed to stable channels.
-2.  A reasonable grace period (typically 7 days) has passed since the fix deployment, allowing users time to update.
+Security is enforced at multiple layers, especially concerning data telemetry and privacy:
 
---- 
+### 4.1. Browser Extension (Manifest V3)
+*   **Data Handling:** All emotional telemetry captured is processed **locally** on the client-side whenever possible. No raw, personally identifiable behavioral data leaves the user's machine without explicit, granular consent.
+*   **Content Security Policy (CSP):** The extension utilizes the strictest CSP possible, limiting script sources to self-hosted resources and trusted CDNs only. Dynamic code execution (e.g., `eval()`) is **FORBIDDEN**.
+*   **Permissions:** Only the minimum necessary host permissions are requested.
 
-## 4. Architectural Security Principles (Zero Trust & Privacy)
+### 4.2. Node.js API (Optional Backend)
+*   **Input Sanitization:** **ALL** data received from any external source (including the extension for aggregated/anonymized telemetry) is sanitized using parameterized queries or ORM methods to prevent Injection attacks (SQL/NoSQL).
+*   **Rate Limiting:** Aggressive rate limiting is implemented at API entry points to mitigate Denial of Service (DoS) and brute-force attacks.
+*   **Secrets Management:** API keys and sensitive configuration are managed exclusively via environment variables (12-Factor App compliance) and are never checked into source control.
 
-This project enforces several architectural constraints designed to limit the blast radius of potential vulnerabilities:
+## 5. Automated Security Checks (CI/CD Integration)
 
-*   **Local-First Telemetry:** The primary data processing in the browser extension **MUST** remain client-side (sandboxed) using Manifest V3 service workers. **NO RAW EMOTIONAL DATA** should be sent to the optional API without prior anonymization or user consent flags.
-*   **Input Validation:** All data transmitted to the optional Node.js API endpoint **MUST** pass stringent validation checks (e.g., `express-validator` or equivalent) against expected schemas.
-*   **Dependency Scanning:** The CI workflow **MUST** execute automated dependency checks (e.g., Snyk or `npm audit`) on every push, blocking merges if High/Critical vulnerabilities are detected.
-*   **Secrets Management:** No hardcoded secrets are permitted in the source code. Configuration must rely exclusively on **Environment Variables** (12-Factor App adherence).
-*   **API Hardening:** If the optional API is used, it must implement **Rate Limiting** and robust **CORS** policies.
+Our continuous integration pipeline (`.github/workflows/ci.yml`) mandates the following security checks to run on every push:
 
---- 
-
-## 5. Security Tooling in CI/CD
-
-The automated pipeline (`.github/workflows/ci.yml`) is configured to enforce security hygiene at multiple stages:
-
-1.  **Static Analysis (SAST):** Biome (for TS/JS) is run with maximum strictness.
-2.  **Dependency Auditing:** Automated checks for known CVEs in dependencies.
-3.  **SBOM Generation:** A Software Bill of Materials (SBOM) must be generated for the Node.js backend/API build artifacts.
-4.  **CSP Enforcement:** The browser extension manifest must strictly define a Content Security Policy (CSP) that limits external resource loading to an absolute minimum.
-
-*Maintainers: If you introduce a new dependency, ensure its security audit passes before merging.*
+1.  **Dependency Audit:** `npm audit` run with `--production` flag. Any High or Critical severity finding will fail the build.
+2.  **Static Analysis:** Leveraging high-precision linters (TypeScript compiler strict checks) to catch type errors that often hide vulnerabilities.
+3.  **SBOM Generation:** A Software Bill of Materials (SBOM) is generated during the build process for supply chain transparency.
+4.  **Vulnerability Scanning:** Integration with GitHub Advanced Security features for dependency scanning.
