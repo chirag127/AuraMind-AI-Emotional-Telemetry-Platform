@@ -1,43 +1,63 @@
-# Pull Request Template
+# Pull Request: Enhancing AuraMind Emotional Telemetry Platform
 
-**Please provide a clear and concise summary of your changes.**
+## 🎯 PR Type Classification (Select one or more)
 
-## Type of Change
+- [ ] `feat`: A new feature aligned with the 2026 roadmap.
+- [ ] `fix`: A bug fix addressing a security vulnerability or operational defect.
+- [ ] `refactor`: Code restructuring without changing external behavior (e.g., adapting to Biome standard).
+- [ ] `docs`: Documentation update (e.g., README, AGENTS.md).
+- [ ] `chore`: Maintenance tasks (dependency upgrades, CI configuration).
+- [ ] `perf`: Performance improvement targeting INP (<200ms) or bundle size.
 
-*   [ ] Bug fix (non-breaking change which fixes an issue)
-*   [ ] New feature (non-breaking change which adds functionality)
-*   [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-*   [ ] Documentation update
-*   [ ] Refactoring
-*   [ ] Chore (e.g. dependency updates, build process)
+## 📝 Feature/Fix Summary (BLUF)
 
-## Description
+**Provide a high-level, two-sentence summary of the change.** What does this PR achieve for the user or the platform's technical integrity?
 
-*   What was changed?
-*   Why was it changed?
-*   What is the impact of these changes?
+---
 
-## Related Issues
+## 🧠 Architectural Alignment & Rationale
 
-*   Closes #[issue number]
-*   Partially closes #[issue number]
-*   Is related to #[issue number]
+*How does this change adhere to the Apex principles (SOLID, DRY, Zero-Trust)?*
 
-## Checklist
+1.  **Principle Addressed:** (e.g., Single Responsibility Principle)
+2.  **Rationale:** (Why was this specific approach chosen over alternatives?)
 
-*   [ ] My code follows the [Apex Technical Authority](https://github.com/apex-dev/apex-code-standards) code style.
-*   [ ] I have performed a self-review of my own code.
-*   [ ] I have commented my code, particularly in hard-to-understand areas.
-*   [ ] I have made corresponding changes to the documentation (if applicable).
-*   [ ] My changes generate no new warnings or errors in the console.
-*   [ ] I have added tests that prove my fix is effective or that my feature works.
-*   [ ] New and existing unit tests pass locally with my changes.
-*   [ ] Any dependent changes have been merged and published.
+---
 
-## Screenshots (if applicable)
+## 🛠 Implementation Details (The How)
 
-*   Please provide screenshots or screen recordings to illustrate your changes.
+*Describe the significant changes made. Be specific about new modules, API interactions, or data flow modifications.*
 
-## Additional Context
+**Extension Changes (Manifest V3 / TypeScript):**
+typescript
+// Snippet showing critical logic change if applicable
 
-*   Add any other context about the change here.
+
+**Backend/API Changes (Node.js/Sentiment Analysis):**
+javascript
+// Snippet showing critical logic change if applicable
+
+
+---
+
+## ✅ Verification Strategy
+
+*Detail how you verified this change meets the **100% Branch Coverage Mandate**.*
+
+1.  **Unit Tests Added/Modified:** (Path to new Vitest files)
+2.  **E2E Scenarios Covered:** (Which Playwright scenarios validate this?)
+3.  **Manual Verification Steps:** (If applicable, steps to test manually in a local build.)
+
+---
+
+## 🛑 Security & Compliance Check (Zero-Trust Protocol)
+
+- [ ] **Input Sanitization:** Is **ALL** external/user input sanitized against OWASP 2025 risks? (Yes/No)
+- [ ] **Data Flow:** Does any telemetry data bypass the defined privacy filters in the extension? (Yes/No)
+- [ ] **Secrets:** Are any secrets exposed or hardcoded? (If Yes, **STOP** and escalate immediately.)
+
+---
+
+## 🖼️ Screenshots/Artifacts (If applicable to UI/UX)
+
+<!-- Add screenshots showing the before/after or the result of the feature -->
