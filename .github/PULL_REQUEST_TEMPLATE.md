@@ -1,43 +1,43 @@
 # Pull Request Template
 
-**Please follow these guidelines when submitting a Pull Request:**
+**Please provide a clear and concise summary of your changes.**
 
-1.  **Commit Message Style:**
-    *   Use Conventional Commits: `<type>(<scope>): <subject>
+## Type of Change
 
-        <body>
+*   [ ] Bug fix (non-breaking change which fixes an issue)
+*   [ ] New feature (non-breaking change which adds functionality)
+*   [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+*   [ ] Documentation update
+*   [ ] Refactoring
+*   [ ] Chore (e.g. dependency updates, build process)
 
-        <footer>`
-    *   **Types:** `feat`, `fix`, `chore`, `docs`, `style`, `refactor`, `perf`, `test`.
-    *   **Scope:** Optional, specifying the part of the codebase affected (e.g., `api`, `extension`, `ui`).
-    *   **Subject:** Concise, imperative mood, capitalized (e.g., `feat: Implement user authentication`).
-    *   **Body:** Explain *what* and *why*, not *how*.
-    *   **Footer:** For breaking changes (`BREAKING CHANGE: ...`) or closing issues (`Closes #123`).
+## Description
 
-2.  **Code Quality:**
-    *   **Linting & Formatting:** Ensure code passes `ruff check` and `ruff format` without errors. Run `uv run Ruff-check .` and `uv run Ruff-format .` locally before committing.
-    *   **Type Hinting:** All functions, methods, and relevant variables must have strict type hints.
-    *   **Testing:** All new features must include comprehensive unit tests. All fixes must include tests that reproduce the bug. Ensure all tests pass (`pytest`). Run `uv run pytest` locally.
-    *   **Architecture:** Adhere to Hexagonal Architecture principles. Ensure clear separation between domain, adapters, and ports.
+*   What was changed?
+*   Why was it changed?
+*   What is the impact of these changes?
 
-3.  **Testing & Verification:**
-    *   [ ] **Local Tests Pass:** All `pytest` suites are passing.
-    *   [ ] **Linting & Formatting Applied:** Code adheres to `ruff` standards.
-    *   [ ] **New Functionality Covered by Tests:** New code paths have corresponding unit/integration tests.
-    *   [ ] **Bug Fixes Verified:** Tests confirm the bug is resolved.
+## Related Issues
 
-4.  **Description:**
-    *   **What does this PR do?** Briefly summarize the changes.
-    *   **Why is this PR needed?** Explain the problem it solves or the feature it adds.
-    *   **How was it implemented?** Highlight key architectural decisions or implementation details.
-    *   **Screenshots/GIFs:** Include visual aids for UI changes if applicable.
-    *   **Related Issues:** Link to any relevant issues (e.g., `Closes #123`, `Fixes #456`).
+*   Closes #[issue number]
+*   Partially closes #[issue number]
+*   Is related to #[issue number]
 
-5.  **Reviewer Checklist:**
-    *   [ ] The PR is small and focused.
-    *   [ ] The code is clear, readable, and well-documented.
-    *   [ ] The changes align with the project's goals and architecture.
-    *   [ ] Potential side effects or regressions have been considered.
-    *   [ ] The PR includes appropriate tests.
+## Checklist
 
----
+*   [ ] My code follows the [Apex Technical Authority](https://github.com/apex-dev/apex-code-standards) code style.
+*   [ ] I have performed a self-review of my own code.
+*   [ ] I have commented my code, particularly in hard-to-understand areas.
+*   [ ] I have made corresponding changes to the documentation (if applicable).
+*   [ ] My changes generate no new warnings or errors in the console.
+*   [ ] I have added tests that prove my fix is effective or that my feature works.
+*   [ ] New and existing unit tests pass locally with my changes.
+*   [ ] Any dependent changes have been merged and published.
+
+## Screenshots (if applicable)
+
+*   Please provide screenshots or screen recordings to illustrate your changes.
+
+## Additional Context
+
+*   Add any other context about the change here.
